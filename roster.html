@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>New England Patriots Fan Page</title>
+    <link href="rosterStyle.css" rel="stylesheet"/>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="mustache.js"></script>
+</head>
+<body background="field-field-line-football-54567.jpg" onload="teamRoster()">
+    <header><h1><img src="patriot logo.jpg" alt="New England Patriots Logo" title="New England Patriots Logo" class="leftSide"/>Patriots Roster<img src="patriot logo.jpg" alt="New England Patriots Logo" title="New England Patriots Logo" class="rightSide"/></h1></header>
+        <h2>2018 Season</h2>
+        <table class="tableLink">
+            <tr>
+                <td class="links"><a href="titlePage.html">Title Page (Video)</a></td>
+                <td class="links"><a href="mainPageLess.html">Main Page</a></td>
+                <td class="links"><a href="schedule.html">Schedule & Record</a></td>
+                <td class="links"><a href="roster.html">Roster</a></td>
+                <td class="links"><a href="coaches.html">Coaches</a></td>
+                <td class="links"><a href="highlights.html">Highlights</a></td>
+            </tr>
+        </table>
+        <div class="container">
+            <div class="row">
+                <div class="col-4">
+                    <h3>Offense</h3>
+                    <script id="template" type="x-tmpl-mustache">
+                        <table>
+                            <tr>
+                                <th>Position</th>
+                                <th>Name</th>
+                                <th>Number</th>
+                            </tr>
+                            {{#offense}}
+                                <tr>
+                                    <td>{{position}}</td>
+                                    <td>{{name}}</td>
+                                    <td>#{{number}}</td>
+                                </tr>
+                            {{/offense}}
+                        </table> 
+                    </script>
+                    <div id="teamOffense"></div>
+                    <script>
+                        function teamRoster(){
+                            var template = $('#template').html();
+                            Mustache.parse(template);
+                            var rendered = Mustache.render(template, {
+                                offense: [
+                                    {
+                                        position: "TE",
+                                        name: "Dwayne Allen",
+                                        number: "83"
+                                    },
+                                    {
+                                        position: "C",
+                                        name: "David Andrews",
+                                        number: "60"
+                                    },
+                                    {
+                                        position: "QB",
+                                        name: "Tom Brady",
+                                        number: "12"
+                                    },
+                                    {
+                                        position: "OL",
+                                        name: "Trent Brown",
+                                        number: "77"
+                                    },
+                                    {
+                                        position: "RB",
+                                        name: "Rex Burkhead",
+                                        number: "34"
+                                    },
+                                    {
+                                        position: "OL",
+                                        name: "Marcus Cannon",
+                                        number: "61"
+                                    },
+                                    {
+                                        position: "FB",
+                                        name: "James Develin",
+                                        number: "46"
+                                    },
+                                    {
+                                        position: "WR",
+                                        name: "Phillip Dorsett",
+                                        number: "13"
+                                    },
+                                    {
+                                        position: "WR",
+                                        name: "Julian Edelman",
+                                        number: "11"
+                                    },
+                                    {
+                                        position: "OL",
+                                        name: "James Ferentz",
+                                        number: "66"
+                                    },
+                                    {
+                                        position: "WR",
+                                        name: "Josh Gordon",
+                                        number: "10"
+                                    },
+                                    {
+                                        position: "TE",
+                                        name: "Rob Gronkowski",
+                                        number: "87"
+                                    },
+                                    {
+                                        position: "WR",
+                                        name: "Chris Hogan",
+                                        number: "15"
+                                    },
+                                    {
+                                        position: "TE",
+                                        name: "Jacob Hollister",
+                                        number: "47"
+                                    },
+                                    {
+                                        position: "QB",
+                                        name: "Brian Hoyer",
+                                        number: "2"
+                                    },
+                                    {
+                                        position: "OL",
+                                        name: "Ted Karras",
+                                        number: "75"
+                                    },
+                                    {
+                                        position: "OL",
+                                        name: "Shaq Mason",
+                                        number: "69"
+                                    },
+                                    {
+                                        position: "RB",
+                                        name: "Sony Michel",
+                                        number: "26"
+                                    },
+                                    {
+                                        position: "WR",
+                                        name: "Cordarrelle Patterson",
+                                        number: "84"
+                                    },
+                                    {
+                                        position: "WR",
+                                        name: "Matthew Slater",
+                                        number: "18"
+                                    },
+                                    {
+                                        position: "OL",
+                                        name: "Joe Thuney",
+                                        number: "62"
+                                    },
+                                    {
+                                        position: "OL",
+                                        name: "LaAdrian Waddle",
+                                        number: "69"
+                                    },
+                                    {
+                                        position: "RB",
+                                        name: "James White",
+                                        number: "28"
+                                    }
+                                    ],
+                                
+                                show: true                   
+                            })
+                            $('#teamOffense').html(rendered);
+                        }
+                    </script>
+                </div>
+                <div class="col-5">
+                    <h3>Defense</h3>
+                    <script id="template2" type="x-tmpl-mustache">
+                        <table>
+                            <tr>
+                                <th>Position</th>
+                                <th>Name</th>
+                                <th>Number</th>
+                            </tr>
+                            {{#defense}}
+                                <tr>
+                                    <td>{{position}}</td>
+                                    <td>{{name}}</td>
+                                    <td>#{{number}}</td>
+                                </tr>
+                            {{/defense}}
+                        </table> 
+                    </script>
+                    <div id="teamDefense"></div>
+                    <script>
+                        $(document).ready(function(){
+                            var template2 = $('#template2').html();
+                            Mustache.parse(template2);
+                            var rendered2 = Mustache.render(template2, {
+                                defense: [
+                                    {
+                                        position: "DL",
+                                        name: "Malcom Brown",
+                                        number: "90"
+                                    },
+                                    {
+                                        position: "DL",
+                                        name: "Adam Butler",
+                                        number: "70"
+                                    },
+                                    {
+                                        position: "S",
+                                        name: "Patrick Chung",
+                                        number: "23"
+                                    },
+                                    {
+                                        position: "DE",
+                                        name: "Adrian Clayborn",
+                                        number: "94"
+                                    },
+                                    {
+                                        position: "DB",
+                                        name: "Keion Crossen",
+                                        number: "35"
+                                    },
+                                    {
+                                        position: "DL",
+                                        name: "Keionta Davis",
+                                        number: "58"
+                                    },
+                                    {
+                                        position: "DB",
+                                        name: "Duke Dawson Jr.",
+                                        number: "29"
+                                    },
+                                    {
+                                        position: "DB",
+                                        name: "Nate Ebner",
+                                        number: "43"
+                                    },
+                                    {
+                                        position: "DL",
+                                        name: "Trey Flowers",
+                                        number: "98"
+                                    },
+                                    {
+                                        position: "LB",
+                                        name: "Nicholas Grigsby",
+                                        number: "50"
+                                    },
+                                    {
+                                        position: "DL",
+                                        name: "Lawrence Guy",
+                                        number: "93"
+                                    },
+                                    {
+                                        position: "DB",
+                                        name: "Duron Harmon",
+                                        number: "21"
+                                    },
+                                    {
+                                        position: "LB",
+                                        name: "Dont'a Hightower",
+                                        number: "54"
+                                    },
+                                    {
+                                        position: "LB",
+                                        name: "Ramon Humber",
+                                        number: "50"
+                                    },
+                                    {
+                                        position: "DB",
+                                        name: "J.C. Jackson",
+                                        number: "27"
+                                    },
+                                    {
+                                        position: "DB",
+                                        name: "Jonathan Jones",
+                                        number: "31"
+                                    },
+                                    {
+                                        position: "LB",
+                                        name: "Brandon King",
+                                        number: "36"
+                                    },
+                                    {
+                                        position: "LB",
+                                        name: "Albert McClellan",
+                                        number: "59"
+                                    },
+                                    {
+                                        position: "DB",
+                                        name: "Devin McCourty",
+                                        number: "32"
+                                    },
+                                    {
+                                        position: "CB",
+                                        name: "Jason McCourty",
+                                        number: "30"
+                                    },
+                                    {
+                                        position: "DB",
+                                        name: "Obi Melifonwu",
+                                        number: "22"
+                                    },
+                                    {
+                                        position: "DE",
+                                        name: "Derek Rivers",
+                                        number: "95"
+                                    },
+                                    {
+                                        position: "DL",
+                                        name: "Danny Shelton",
+                                        number: "71"
+                                    },
+                                    {
+                                        position: "DE",
+                                        name: "John Simon",
+                                        number: "55"
+                                    },
+                                    {
+                                        position: "LB",
+                                        name: "Kyle Van Noy",
+                                        number: "53"
+                                    },
+                                    {
+                                        position: "DL",
+                                        name: "Deatrich Wise Jr.",
+                                        number: "91"
+                                    }
+                                    ],
+                                
+                                show: true                   
+                            })
+                            $('#teamDefense').html(rendered2);
+                        });
+                    </script>
+                </div>
+                <div class="col-1">
+                    <h3>Special Teams</h3>
+                    <script id="template3" type="x-tmpl-mustache">
+                        <table>
+                            <tr>
+                                <th>Position</th>
+                                <th>Name</th>
+                                <th>Number</th>
+                            </tr>
+                            {{#specialTeam}}
+                                <tr>
+                                    <td>{{position}}</td>
+                                    <td>{{name}}</td>
+                                    <td>#{{number}}</td>
+                                </tr>
+                            {{/specialTeam}}
+                        </table>
+                        <h3>Reserve/Injured</h3> 
+                        <table>
+                            <tr>
+                                <th>Position</th>
+                                <th>Name</th>
+                                <th>Number</th>
+                            </tr>
+                            {{#injuredReserve}}
+                                <tr>
+                                    <td>{{position}}</td>
+                                    <td>{{name}}</td>
+                                    <td>#{{number}}</td>
+                                </tr>
+                            {{/injuredReserve}}
+                        </table>
+                    </script>
+                    <div id="specialTeams"></div>
+                    <script>
+                        $(document).ready(function(){
+                            var template3 = $('#template3').html();
+                            Mustache.parse(template3);
+                            var rendered3 = Mustache.render(template3, {
+                                specialTeam: [
+                                    {
+                                        position: "P",
+                                        name: "Ryan Allen",
+                                        number: "6"
+                                    },
+                                    {
+                                        position: "LS",
+                                        name: "Joe Cardona",
+                                        number: "49"
+                                    },
+                                    {
+                                        position: "K",
+                                        name: "Stephen Gostkowski",
+                                        number: "3"
+                                    }
+                                    ],
+
+                                injuredReserve: [
+                                    {
+                                        position: "WR",
+                                        name: "Darren Andrews",
+                                        number: "16"
+                                    },
+                                    {
+                                        position: "LB",
+                                        name: "Ja'Whaun Bentley",
+                                        number: "51"
+                                    },
+                                    {
+                                        position: "WR",
+                                        name: "Braxton Berrios",
+                                        number: "14"
+                                    },
+                                    {
+                                        position: "RB",
+                                        name: "Jeremy Hill",
+                                        number: "33"
+                                    },
+                                    {
+                                        position: "WR",
+                                        name: "Cody Hollister",
+                                        number: "81"
+                                    },
+                                    {
+                                        position: "TE",
+                                        name: "Ryan Izzo",
+                                        number: "85"
+                                    },
+                                    {
+                                        position: "OL",
+                                        name: "Ulrick John",
+                                        number: "67"
+                                    },
+                                    {
+                                        position: "DB",
+                                        name: "Eric Rowe",
+                                        number: "25"
+                                    },
+                                    {
+                                        position: "LB",
+                                        name: "Christian Sam",
+                                        number: "44"
+                                    },
+                                    {
+                                        position: "OL",
+                                        name: "Brian Schwenke",
+                                        number: "63"
+                                    },
+                                    {
+                                        position: "OL",
+                                        name: "Isaiah Wynn",
+                                        number: "76"
+                                    }
+                                ],
+                                show: true                   
+                            })
+                            $('#specialTeams').html(rendered3);
+                        });
+                    </script>
+                </div>
+            </div>
+        </div>
+</body>
+</html>

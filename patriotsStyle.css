@@ -1,0 +1,141 @@
+.borderStyle {
+  outline-style: double;
+  outline-width: 10px;
+  outline-color: #C60C30;
+}
+header {
+  text-align: center;
+  color: #B0B7BC;
+  background-color: #002244;
+}
+header h1 {
+  font-size: 60px;
+  font-weight: 500;
+  font-family: 'Luminari', fantasy;
+  outline-style: double;
+  outline-width: 10px;
+  outline-color: #C60C30;
+}
+h2 {
+  font-size: 36px;
+  font-weight: 500;
+  font-family: 'Luminari', fantasy;
+  text-align: center;
+  color: #B0B7BC;
+  background-color: #002244;
+  outline-style: double;
+  outline-width: 10px;
+  outline-color: #C60C30;
+  margin-left: 25%;
+  margin-right: 25%;
+}
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  color: #B0B7BC;
+}
+.container .row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.container .col {
+  position: relative;
+  width: 250px;
+  height: 200px;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding: 10px;
+  border-width: 5px;
+  border-style: groove;
+  border-color: #C60C30;
+  background-color: #002244;
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  max-width: 100%;
+}
+.container .col a {
+  color: #B0B7BC;
+}
+.container .col a:hover {
+  color: #000;
+  font-weight: bold;
+}
+img.leftSide {
+  width: 80px;
+  height: 40px;
+  float: left;
+  margin-top: 1.25%;
+  margin-left: 6%;
+}
+img.rightSide {
+  width: 80px;
+  height: 40px;
+  float: right;
+  margin-top: 1.25%;
+  margin-right: 6%;
+}
+img.align-content-center {
+  width: 400px;
+  height: 250px;
+  display: block;
+  margin: 0px auto;
+  outline-style: double;
+  outline-width: 10px;
+  outline-color: #C60C30;
+  outline-style: groove;
+  outline-width: 5px;
+}
+iframe {
+  display: block;
+  margin: 0px auto;
+  outline-style: groove;
+  outline-width: 6px;
+  outline-color: #C60C30;
+}
+p {
+  text-align: center;
+  color: #B0B7BC;
+  margin-top: 2%;
+  margin-left: 25%;
+  margin-right: 25%;
+  border: #C60C30 double;
+  background-color: #002244;
+}
+button {
+  display: block;
+  margin: 0px auto;
+  margin-top: 4%;
+  margin-bottom: 10%;
+  height: 60px;
+  width: 100px;
+  border: #C60C30 double 5px;
+  color: #B0B7BC;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 25px;
+  background-color: #002244;
+}
+.links {
+  width: 100px;
+  height: 140px;
+  padding: 10%;
+}
+.links2 {
+  width: 175px;
+  height: 100px;
+  padding: 6%;
+  padding-top: 18%;
+}
+.links3 {
+  width: 125px;
+  height: 140px;
+  padding: 10%;
+}

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>New England Patriots Fan Page</title>
+    <link href="scheduleStyle.css" rel="stylesheet"/>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="mustache.js"></script>
+</head>
+<body background="field-field-line-football-54567.jpg" onload="teamStandings()">
+    <header><h1><img src="patriot logo.jpg" alt="New England Patriots Logo" title="New England Patriots Logo" class="leftSide"/>Patriots Schedule<img src="patriot logo.jpg" alt="New England Patriots Logo" title="New England Patriots Logo" class="rightSide"/></h1></header>
+        <h2>2018 Season</h2>
+        <table class="tableLink">
+            <tr>
+                <td class="links"><a href="titlePage.html">Title Page (Video)</a></td>
+                <td class="links"><a href="mainPageLess.html">Main Page</a></td>
+                <td class="links"><a href="schedule.html">Schedule & Record</a></td>
+                <td class="links"><a href="roster.html">Roster</a></td>
+                <td class="links"><a href="coaches.html">Coaches</a></td>
+                <td class="links"><a href="highlights.html">Highlights</a></td>
+            </tr>
+        </table>
+        <div class="container">
+            <div class="row">
+                <div class="col-4">
+                    <h3>AFC East Standings</h3>
+                    <script id="template" type="x-tmpl-mustache">
+                        <table>
+                            <tr>
+                                <th>Place</th>
+                                <th>Team</th>
+                                <th>Record</th>
+                            </tr>
+                            {{#teams}}
+                                <tr>
+                                    <td>{{place}}</td>
+                                    <td>{{name}}</td>
+                                    <td>{{record}}</td>
+                                </tr>
+                            {{/teams}}
+                        </table> 
+                    </script>
+                    <div id="divStandings"></div>
+                    <script>
+                        function teamStandings(){
+                            var template = $('#template').html();
+                            Mustache.parse(template);
+                            var rendered = Mustache.render(template, {
+                                teams: [
+                                    {
+                                        place: "1st",
+                                        name: "New England Patriots",
+                                        record: "9-4"
+                                    },
+                                    {
+                                        place: "2nd",
+                                        name: "Miami Dolphins",
+                                        record: "7-6"
+                                    },
+                                    {
+                                        place: "3rd",
+                                        name: "Buffalo Bills",
+                                        record: "4-9"
+                                    },
+                                    {
+                                        place: "4th",
+                                        name: "New York Jets",
+                                        record: "4-9"
+                                    }
+                                    ],
+                                
+                                show: true                   
+                            })
+                            $('#divStandings').html(rendered);
+                        }
+                    </script>
+                </div>
+                <div class="col-8">
+                    <h3>Schedule</h3>
+                    <script id="template2" type="x-tmpl-mustache">
+                        <table>
+                            <tr>
+                                <th>Week</th>
+                                <th>Opponent</th>
+                                <th>Score</th>
+                                <th>Result</th>
+                                <th>Date</th>
+                                <th>Location</th>
+                            </tr>
+                            {{#games}}
+                                <tr>
+                                    <td>{{week}}</td>
+                                    <td>{{opponent}}</td>
+                                    <td>{{score}}</td>
+                                    <td>{{result}}</td>
+                                    <td>{{date}}</td>
+                                    <td>{{location}}</td>
+                                </tr>
+                            {{/games}}
+                        </table>
+                    </script>
+                    <div id="schedule"></div>
+                    <script>
+                        $(document).ready(function(){
+                            var template2 = $('#template2').html();
+                            Mustache.parse(template2);
+                            var rendered2 = Mustache.render(template2, {
+                                games: [
+                                    {
+                                        week: "1",
+                                        opponent: "Houston Texans",
+                                        score: "27 - 20",
+                                        result: "Win",
+                                        date: "9/9",
+                                        location: "Home"
+                                    },
+                                    {
+                                        week: "2",
+                                        opponent: "Jacksonville Jaguars",
+                                        score: "20 - 31",
+                                        result: "Loss",
+                                        date: "9/16",
+                                        location: "Away"
+                                    },
+                                    {
+                                        week: "3",
+                                        opponent: "Detriot Lions",
+                                        score: "10 - 26 ",
+                                        result: "Loss",
+                                        date: "9/23",
+                                        location: "Away"
+                                    },
+                                    {
+                                        week: "4",
+                                        opponent: "Miami Dolphins",
+                                        score: "38 - 7",
+                                        result: "Win",
+                                        date: "9/30",
+                                        location: "Home"
+                                    },
+                                    {
+                                        week: "5",
+                                        opponent: "Indianapolis Colts",
+                                        score: "38 - 24",
+                                        result: "Win",
+                                        date: "10/4",
+                                        location: "Home"
+                                    },
+                                    {
+                                        week: "6",
+                                        opponent: "Kansas City Chiefs",
+                                        score: "43 - 40",
+                                        result: "Win",
+                                        date: "10/14",
+                                        location: "Home"
+                                    },
+                                    {
+                                        week: "7",
+                                        opponent: "Chicago Bears",
+                                        score: "38 - 31",
+                                        result: "Win",
+                                        date: "10/21",
+                                        location: "Away"
+                                    },
+                                    {
+                                        week: "8",
+                                        opponent: "Buffalo Bills",
+                                        score: "25 - 6",
+                                        result: "Win",
+                                        date: "10/29",
+                                        location: "Away"
+                                    },
+                                    {
+                                        week: "9",
+                                        opponent: "Green Bay Packers",
+                                        score: "31 - 17",
+                                        result: "Win",
+                                        date: "11/4",
+                                        location: "Home"
+                                    },
+                                    {
+                                        week: "10",
+                                        opponent: "Tennessee Titans",
+                                        score: "10 - 34",
+                                        result: "Loss",
+                                        date: "11/11",
+                                        location: "Away"
+                                    },
+                                    {
+                                        week: "11",
+                                        opponent: "Bye",
+                                        score: "N/A",
+                                        result: "N/A",
+                                        date: "11/18",
+                                        location: "N/A"
+                                    },
+                                    {
+                                        week: "12",
+                                        opponent: "New York Jets",
+                                        score: "27 - 13",
+                                        result: "Win",
+                                        date: "11/25",
+                                        location: "Away"
+                                    },
+                                    {
+                                        week: "13",
+                                        opponent: "Minnesota Vikings",
+                                        score: "24 - 10",
+                                        result: "Win",
+                                        date: "12/2",
+                                        location: "Home"
+                                    },
+                                    {
+                                        week: "14",
+                                        opponent: "Miami Dolphins",
+                                        score: "33 - 34",
+                                        result: "Loss",
+                                        date: "12/9",
+                                        location: "Away"
+                                    },
+                                    {
+                                        week: "15",
+                                        opponent: "Pittsburgh Steelers",
+                                        score: "N/A",
+                                        result: "N/A",
+                                        date: "12/16",
+                                        location: "Away"
+                                    },
+                                    {
+                                        week: "16",
+                                        opponent: "Buffalo Bills",
+                                        score: "N/A",
+                                        result: "N/A",
+                                        date: "12/23",
+                                        location: "Home"
+                                    },
+                                    {
+                                        week: "17",
+                                        opponent: "New York Jets",
+                                        score: "N/A",
+                                        result: "N/A",
+                                        date: "12/30",
+                                        location: "Home"
+                                    }
+                                    ],
+                                
+                                show: true                   
+                            })
+                            $('#schedule').html(rendered2);
+                        });
+                    </script>
+                </div>
+                <img src="nfl logo.jpg" alt="NFL Logo" title="NFL Logo" class="align-content-center"/>
+            </div>
+        </div>
+</body>
+</html>

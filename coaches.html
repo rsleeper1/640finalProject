@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>New England Patriots Fan Page</title>
+    <link href="coachesStyle.css" rel="stylesheet"/>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="mustache.js"></script>
+</head>
+<body background="field-field-line-football-54567.jpg" onload="coachRoster()">
+    <header><h1><img src="patriot logo.jpg" alt="New England Patriots Logo" title="New England Patriots Logo" class="leftSide"/>Patriots Coaches<img src="patriot logo.jpg" alt="New England Patriots Logo" title="New England Patriots Logo" class="rightSide"/></h1></header>
+        <h2>2018 Season</h2>
+        <table class="tableLink">
+            <tr>
+                <td class="links"><a href="titlePage.html">Title Page (Video)</a></td>
+                <td class="links"><a href="mainPageLess.html">Main Page</a></td>
+                <td class="links"><a href="schedule.html">Schedule & Record</a></td>
+                <td class="links"><a href="roster.html">Roster</a></td>
+                <td class="links"><a href="coaches.html">Coaches</a></td>
+                <td class="links"><a href="highlights.html">Highlights</a></td>
+            </tr>
+        </table>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h3>Head Coach</h3>
+                    <img src="bill b.jpg" alt="Bill Belichick" title="Bill Belichick" class="align-content-center"/>
+                    <p>Bill Belichick</p>
+                </div>
+            </div> 
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-4">
+                    <h3>Offense</h3>
+                    <script id="template" type="x-tmpl-mustache">
+                        <table>
+                            <tr>
+                                <th>Position</th>
+                                <th>Name</th>
+                            </tr>
+                            {{#offenseCoach}}
+                                <tr>
+                                    <td>{{position}}</td>
+                                    <td>{{name}}</td>
+                                </tr>
+                            {{/offenseCoach}}
+                        </table> 
+                    </script>
+                    <div id="offenseCoaches"></div>
+                    <script>
+                        function coachRoster(){
+                            var template = $('#template').html();
+                            Mustache.parse(template);
+                            var rendered = Mustache.render(template, {
+                                offenseCoach: [
+                                    {
+                                        position: "Offensive Coordinator/Quarterbacks Coach",
+                                        name: "Josh McDaniels",
+                                    },
+                                    {
+                                        position: "Offensive Line Coach",
+                                        name: "Dante Scarnecchia",
+                                    },
+                                    {
+                                        position: "Running Backs Coach",
+                                        name: "Ivan Fears",
+                                    },
+                                    {
+                                        position: "Wide Receivers Coach",
+                                        name: "Chad O'Shea",
+                                    },
+                                    {
+                                        position: "Tight Ends Coach",
+                                        name: "Nick Caley",
+                                    },
+                                    {
+                                        position: "Assistant Quarterbacks Coach",
+                                        name: "Jerry Schuplinski",
+                                    }
+                                    ],
+                                
+                                show: true                   
+                            })
+                            $('#offenseCoaches').html(rendered);
+                        }
+                    </script>
+                </div>
+                <div class="col-5">
+                    <h3>Defense</h3>
+                    <script id="template2" type="x-tmpl-mustache">
+                        <table>
+                            <tr>
+                                <th>Position</th>
+                                <th>Name</th>
+                            </tr>
+                            {{#defenseCoach}}
+                                <tr>
+                                    <td>{{position}}</td>
+                                    <td>{{name}}</td>
+                                </tr>
+                            {{/defenseCoach}}
+                        </table> 
+                    </script>
+                    <div id="defenseCoaches"></div>
+                    <script>
+                        $(document).ready(function(){
+                            var template2 = $('#template2').html();
+                            Mustache.parse(template2);
+                            var rendered2 = Mustache.render(template2, {
+                                defenseCoach: [
+                                    {
+                                        position: "Linebackers Coach",
+                                        name: "Brian Flores",
+                                    },
+                                    {
+                                        position: "Defensive Line Coach",
+                                        name: "Brendan Daly",
+                                    },
+                                    {
+                                        position: "Cornerbacks Coach",
+                                        name: "Josh Boyer",
+                                    },
+                                    {
+                                        position: "Safeties Coach",
+                                        name: "Steve Belichick",
+                                    }
+                                    ],
+                                
+                                show: true                   
+                            })
+                            $('#defenseCoaches').html(rendered2);
+                        });
+                    </script>
+                </div>
+                <div class="col-1">
+                    <h3>Special Teams</h3>
+                    <script id="template3" type="x-tmpl-mustache">
+                        <table>
+                            <tr>
+                                <th>Position</th>
+                                <th>Name</th>
+                            </tr>
+                            {{#specialTeamCoach}}
+                                <tr>
+                                    <td>{{position}}</td>
+                                    <td>{{name}}</td>
+                                </tr>
+                            {{/specialTeamCoach}}
+                        </table>
+                        <br>
+                        <br>
+                        <h3>Strength and Conditioning</h3> 
+                        <table>
+                            <tr>
+                                <th>Position</th>
+                                <th>Name</th>
+                            </tr>
+                            {{#strengthAndConditioningCoach}}
+                                <tr>
+                                    <td>{{position}}</td>
+                                    <td>{{name}}</td>
+                                </tr>
+                            {{/strengthAndConditioningCoach}}
+                        </table>
+                    </script>
+                    <div id="specialTeamsCoaches"></div>
+                    <script>
+                        $(document).ready(function(){
+                            var template3 = $('#template3').html();
+                            Mustache.parse(template3);
+                            var rendered3 = Mustache.render(template3, {
+                                specialTeamCoach: [
+                                    {
+                                        position: "Special Teams Coach",
+                                        name: "Joe Judge",
+                                    },
+                                    {
+                                        position: "Assistant Special Teams Coach",
+                                        name: "Cameron Achord",
+                                    }
+                                    ],
+
+                                strengthAndConditioningCoach: [
+                                    {
+                                        position: "Head Strength and Conditioning Coach",
+                                        name: "Moses Cabrera",
+                                    },
+                                    {
+                                        position: "Assistant Strength and Conditioning Coach",
+                                        name: "Deron Mayo",
+                                    }
+                                    ],
+
+                                show: true                   
+                            })
+                            $('#specialTeamsCoaches').html(rendered3);
+                        });
+                    </script>
+                </div>
+            </div>
+        </div>
+</body>
+</html>
